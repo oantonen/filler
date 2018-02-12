@@ -6,13 +6,13 @@
 /*   By: oantonen <oantonen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/25 15:00:24 by oantonen          #+#    #+#             */
-/*   Updated: 2018/02/10 21:08:55 by oantonen         ###   ########.fr       */
+/*   Updated: 2018/02/12 21:53:03 by oantonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "hfiller.h"
 
-void	detect_x_or_y(t_struct *sizes)
+void	detect_who_is_who(t_struct *sizes)
 {
 	char	*first;
 	
@@ -60,13 +60,13 @@ void	piece_size(t_struct *sizes, char *first)
 	// write_piece(sizes);
 }
 
-void	write_map_and_piece(t_struct *sizes, char *first)
+void	write_map(t_struct *sizes, char *first)
 {
 	// char	*first;
 	int		i;
 
 	i = -1;
-	(*sizes).map = (char**)malloc(sizeof(char*) * ((*sizes).map_y + 1)); //check? if !NULL
+	(*sizes).map = (char**)malloc(sizeof(char*) * ((*sizes).map_y + 1));
 	(*sizes).map[(*sizes).map_y] = NULL;
 	while (i++ != (*sizes).map_y - 1)
 	{
@@ -87,6 +87,7 @@ void	map_size(t_struct *sizes, char *first)
 	int		i;
 
 	i = -1;
+	get_next_line(0, &first);
 	(*sizes).map_y = ft_atoi(&first[8]);
 	(*sizes).map_x = ft_atoi(&first[11]);
 }

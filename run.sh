@@ -22,7 +22,7 @@ x_wins=0;
 if [[ $3 = 0 ]]
 then
 
-./filler_vm -p2 ${player[$1]} -p1 ${me} -f ${map[$2]} > ${out}
+./filler_vm -p1 ${player[$1]} -p2 ${me} -f ${map[$2]} > ${out}
 sed -e 's/x/+/g; s/o/-/g' project/fight1.txt > project/fight.txt
 o_figures=$(grep "== O" project/fight.txt | sed 's/[^0-9]*//g')
 x_figures=$(grep "== X" project/fight.txt | sed 's/[^0-9]*//g')
@@ -34,7 +34,7 @@ else
 
 	while [ $runs -gt 0 ]
 	do
-	./filler_vm -p2 ${player[$1]} -p1 ${me} -f ${map[$2]} -q > ${stati}
+	./filler_vm -p1 ${player[$1]} -p2 ${me} -f ${map[$2]} -q > ${stati}
 	sed -e '/#/d' ${stati} >> project/statistica2.txt
 	o_figures=$(grep "== O" project/statistica.txt | sed 's/[^0-9]*//g')
 	x_figures=$(grep "== X" project/statistica.txt | sed 's/[^0-9]*//g')

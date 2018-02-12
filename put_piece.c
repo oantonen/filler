@@ -6,7 +6,7 @@
 /*   By: oantonen <oantonen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/25 16:15:59 by oantonen          #+#    #+#             */
-/*   Updated: 2018/02/10 21:37:15 by oantonen         ###   ########.fr       */
+/*   Updated: 2018/02/12 22:13:22 by oantonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,16 +94,38 @@ void	check_dist(t_struct *sizes, int x, int y, int i)
 
 int		algorithm_switcher(t_struct *sizes, int x, int y, int i)
 {
+	// dprintf(2, "Entered\n");
+	// dprintf(2, "i==%d\n", i);
 	if (sizes->map_x * sizes->map_y == SMALL_MAP)
 		return (small_algorithm(sizes, x, y, i));
-	if (center_is_touched(sizes) == 0)
-		return (1);
-	else if (left_is_touched(sizes) == 0)
+	if (left_is_touched(sizes) == 0)
+	{
+		// dprintf(2, "Entered1\n");
 		check_dist(sizes, x, y, i);
+	}
 	else if (right_is_touched(sizes) == 0)
+	{
+		// dprintf(2, "Entered2\n");
 		check_dist2(sizes, x, y, i);
+	}
+	else if (sizes->hole_count < 10 && left_is_touched(sizes) && right_is_touched(sizes))
+	{
+		dprintf(2, "Entered3\n");
+		return (scan_map_for_holes(sizes, y, x));
+	}
+	// else if (sizes->hole_algo_count < 5 && scan_map_for_holes(sizes, y, x))
+	// {
+	// 	dprintf(2, "sizes->hole_algo_count=%d\n", sizes->hole_algo_count);
+	// 	return (1);
+	// }
 	else if (left_is_touched(sizes) && right_is_touched(sizes))
-		return (1);
+	{
+		// if (is_enemy_above(sizes) == 1)
+		dprintf(2, "Entered4\n");
+			return (1);
+		// else
+		// 	maximize_field(sizes, x, y);
+	}
 	return (0);
 }
 
