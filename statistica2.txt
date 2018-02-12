@@ -1,0 +1,41 @@
+launched players/carli.filler
+launched ./oantonen.filler
+== O fin: 169
+== X fin: 164
+launched players/carli.filler
+launched ./oantonen.filler
+== O fin: 160
+== X fin: 187
+launched players/carli.filler
+launched ./oantonen.filler
+== O fin: 188
+== X fin: 39
+launched players/carli.filler
+launched ./oantonen.filler
+== O fin: 203
+== X fin: 146
+launched players/carli.filler
+launched ./oantonen.filler
+== O fin: 136
+== X fin: 209
+launched players/carli.filler
+launched ./oantonen.filler
+== O fin: 202
+== X fin: 49
+launched players/carli.filler
+launched ./oantonen.filler
+== O fin: 81
+== X fin: 57
+launched players/carli.filler
+launched ./oantonen.filler
+== O fin: 176
+== X fin: 191
+launched players/carli.filler
+launched ./oantonen.filler
+== O fin: 122
+== X fin: 47
+launched players/carli.filler
+launched ./oantonen.filler
+== O fin: 184
+== X fin: 44
+X is winning with a score 3 : 7

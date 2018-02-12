@@ -1,0 +1,9 @@
+# -------------- VM  version 1.1 ------------- #
+#                                              #
+# 42 / filler VM Developped by: Hcao - Abanlin #
+#                                              #
+# -------------------------------------------- #
+launched players/carli.filler
+launched ./oantonen.filler
+== O fin: 184
+== X fin: 44
